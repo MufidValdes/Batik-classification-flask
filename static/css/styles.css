@@ -1,0 +1,597 @@
+/*Start Global*/
+* {
+    box-sizing: border-box;
+  }
+  body {
+    margin: 0;
+    padding: 12px;
+  }
+  body.hide-scroll::-webkit-scrollbar {
+    display: none;
+  }
+  a {
+    text-decoration: none;
+  }
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  img {
+    max-width: 100%;
+  }
+  h2 {
+    font-family: 'Herr Von Muellerhoff', cursive;
+    font-size: 100px;
+    font-weight: normal;
+    margin: 0 0 -55px;
+  }
+  h1, h3 {
+    font-family: "Source Code Pro", sans-serif;
+    font-size: 47px;
+    font-weight: bold;
+    letter-spacing: 9.4px;
+  }
+  p {
+    color: #515151;
+    line-height: 27px;
+  }
+  .a-CTA {
+    border-bottom: 2px solid #a96700;
+    padding-bottom: 4px;
+    letter-spacing: 1.5px;
+    font-size: 18px;
+  }
+  /*End Global*/
+  
+  /*Start Mutual*/
+  p, .a-CTA, input, header .navigation-bar a, .contact .form form label, .contact .form form button {
+    font-family: Cabin, sans-serif;
+  }
+  .fa-asterisk, .a-CTA, h2, header .navigation-bar a:hover, header nav.active .navigation-bar a:hover, footer .social-media .links a:hover {
+    color: #a96700;
+  }
+  header nav .navigation-bar .underline, header .text .button button:hover, .contact .form form button:hover, .contact .text i:hover {
+    background-color: #a96700;
+  }
+  header .navigation-bar ul li, header .text, .about-us .text, .reservation .text, .batik .box-model, .batik .text, .fixed-image .text, footer, .contact .text i {
+    text-align: center;
+  }
+  header nav, header .navigation-bar ul, .about-us, .reservation, .about-us .image-container, .reservation .image-container, .batik, .batik .batik-image-container, footer .contact-container {
+    display: flex;
+  }
+  header nav .toggle, header nav .toggle span, header .navigation-bar, header .navigation-bar ul, .batik .box-model .close, footer .social-media .links a {
+    transition: .3s;
+  }
+  header, header nav .toggle span, header .navigation-bar a, header .text, header .text .arrow .left, header .text .arrow .right, .collection, .batik .box-image-container, .fixed-image .text {
+    position: relative;
+  }
+  header nav .toggle, header .navigation-bar .underline, header .text .arrow .left:after, header .text .arrow .right:after, header .svg-down, header .arrow-down, .collection .text, .batik .box-model .close, .batik .box-model .arrow .arrow-right,.batik .box-model .arrow .arrow-left, .batik .box-image-container .box-image {
+    position: absolute;
+  }
+  .collection .text, .fixed-image .text, .batik .box-image-container, .batik .box-image-container .box-image {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+  }
+  header nav, header .navigation-bar a:hover .underline, header .navigation-bar li.active .underline, .batik .box-model, .batik .box-image-container, .batik .box-image-container .box-image {
+    width: 100%;
+  }
+  button, .dots > div, header nav .toggle, header .arrow-down, .batik .box-model .close, .batik .box-model .arrow .arrow-right,.batik .box-model .arrow .arrow-left, .batik .batik-image-container .image img, footer .newsletter i {
+    cursor: pointer;
+  }
+  .dots .active, header nav.active, header nav.active .toggle.active span, header nav .toggle span, header .navigation-bar .underline, header .text .arrow .left, header .text .arrow .right, header .text .button button, .contact form button {
+    background-color: #fff;
+  }
+  h1, h3, header .navigation-bar a, header .text span, .batik .box-model .close:hover, footer .text h2, footer .text p, footer .social-media .links a, .contact .text i, .contact .form form button {
+    color: #fff;
+  }
+  header nav, header .navigation-bar.show, header .navigation-bar a:hover .underline, header .navigation-bar li.active .underline, header .text .arrow .left:after, .batik .box-model {
+    left: 0;
+  }
+  header .text .arrow .left:after, header .text .arrow .right:after, header .text span, footer .social-media .links a, footer .newsletter i, .contact .text i, .contact .form form label {
+    display: inline-block;
+  }
+  /*End Mutual*/
+  
+  
+  /*Start Header*/
+  header {
+    height: calc(85vh - 22px);
+    background-size: cover;
+    background: url("https://wallpaperaccess.com/full/1883226.jpg") fixed center;
+    padding: 20px 70px;
+  }
+  header nav {
+    position: fixed;
+    top: 0;
+    background-color: #121212;
+    padding: 36px 36px 20px;
+    z-index: 20;
+  }
+  .header nav .logo h1 {
+    font-size: 30px;
+    margin: 0;
+    font-weight: 700;
+  }
+  header nav .toggle {
+    display: none;
+    top: 26px;
+    left: 20px;
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    z-index: 21;
+  }
+  header nav .toggle:focus {
+    outline: none;
+  }
+  header nav.active .toggle span {
+    background-color: #000;
+  }
+  header nav .toggle.active {
+    left: 32%;
+  }
+  header nav .toggle.active .first {
+    top: 16px;
+    transform: rotate(-45deg);
+  }
+  header nav .toggle.active .last {
+    top: 0;
+    transform: rotate(45deg);
+  }
+  header nav .toggle .hide {
+    transition: 0s;
+    visibility: hidden;
+  }
+  header nav .toggle span {
+    display: block;
+    width: 30px;
+    height: 2px;
+    border-radius: 40px;
+  }
+  header nav .toggle span:not(:last-of-type) {
+    margin-bottom: 6px;
+  }
+  header nav .logo {
+    flex-basis: 56%;
+    padding-left: 50px;
+  }
+  header .navigation-bar.show {
+    width: 40%;
+  }
+  header .navigation-bar.show a {
+    color: #ccc !important;
+  }
+  header .navigation-bar.show a:hover {
+    color: #fff !important;
+  }
+  header .navigation-bar ul li {
+    flex: 1;
+    padding: 0 10px;
+  }
+  header .navigation-bar a {
+    text-decoration: none;
+    transition: all .5s;
+    font-size: 16px;
+  }
+  header nav.active .navigation-bar a {
+    color: #000;
+  }
+  header .navigation-bar .underline {
+    height: 2px;
+    width: 0;
+    left: 50%;
+    bottom: -4px;
+    transition: all .3s;
+    display: block;
+  }
+  header .text {
+  
+    background-color:#121212;
+    border-radius: 30px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+    position: relative;
+    overflow: hidden;
+    max-width: 100%;
+    min-height: 280px;
+    top: 24%;
+  }
+  header .text h1 {
+    margin-bottom: 0;
+  }
+  header .text .arrow .left, header .text .arrow .right {
+    height: 3px;
+    width: 100px;
+  }
+  header .text .arrow .left {
+    left: -4%;
+  }
+  header .text .arrow .right {
+    right: -4%;
+  }
+  header .text .arrow .left:after, header .text .arrow .right:after {
+    content: '';
+    border: 10px solid transparent;
+    border-left-color: #fff;
+    top: -8px;
+  }
+  header .text .arrow .right:after {
+    right: 0;
+    border-color: transparent #fff transparent transparent;
+  }
+  header .text .arrow .fa-asterisk {
+    vertical-align: super;
+  }
+  header .text span {
+    font-family: "Source Code Pro", sans-serif;
+    font-size: 15px;
+    margin-bottom: 12px;
+  }
+  header .text .button button, .contact form button {
+    border: none;
+    padding: 9px 18px;
+    letter-spacing: 2.4px;
+    font-size: 12px;
+    font-family: source_sans_problack, sans-serif;
+    border-radius: 3px;
+  }
+  header .text .button button, .contact form button:focus {
+    outline: none;
+  }
+  header .svg-down {
+    bottom: 0;
+    left: 50%;
+    z-index: 5;
+    margin-left: -96px;
+    margin-bottom: -12px;
+    color: #fff;
+  }
+  header .arrow-down {
+    width: 70px;
+    height: 50px;
+    bottom: -10px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    z-index: 10;
+    background: url("https://res.cloudinary.com/abdel-rahman-ali/image/upload/v1535988515/arrow-down.png") no-repeat center;
+  }
+  /*End Header*/
+  
+  /*Start About-Us*/
+  .about-us, .reservation {
+    padding: 60px;
+  }
+  .about-us .text, .reservation .text {
+    flex: 50%;
+    padding: 40px 52px 0 0;
+  }
+  .about-us .text h3, .reservation .text h3 {
+    color: #000;
+  }
+  .about-us .text .fa-asterisk, .reservation .text .fa-asterisk {
+    color: #9a9998;
+  }
+  .about-us .image-container, .reservation .image-container {
+    flex: 50%;
+  }
+  .about-us .image, .reservation .image {
+    margin-left: 20px;
+  }
+  /*End About-Us*/
+  
+  /*Start collection*/
+  .collection .image {
+    height: 350px;
+    background: url("https://asiangeo.com/wp-content/uploads/2018/02/shutterstock_725784952.jpg") fixed center;
+    background-size: cover;
+  }
+  /*End collection*/
+  
+  /*Start batik*/
+  .batik {
+    padding: 60px;
+  }
+  .batik .box-model {
+    display: none;
+    position: fixed;
+    height: 100%;
+    top: 0;
+    z-index: 20;
+    background-color: rgba(0,0,0,.7);
+  }
+  .batik .box-model.active {
+    display: block;
+  }
+  .batik .box-model.active body {
+    overflow: hidden;
+  }
+  .batik .box-model .close {
+    color: #ccc;
+    right: 25px;
+    top: 10px;
+    z-index: 20;
+  }
+  .batik .box-model .arrow .arrow-right,.batik .box-model .arrow .arrow-left {
+    width: 40px;
+    height: 40px;
+    right: 20px;
+    top: 50%;
+    border-right: 2px solid #fff;
+    border-top: 2px solid #fff;
+    transform: rotate(45deg);
+    z-index: 20;
+  }
+  .batik .box-model .arrow .arrow-left {
+    left: 20px;
+    transform: rotate(-135deg);
+  }
+  .batik .box-image-container {
+    height: 100%;
+  }
+  .batik .box-image-container .box-image img.active {
+    animation: scale .5s;
+  }
+  @keyframes scale {
+    from {transform: scale(0,0)}
+    to {transform: scale(1,1)}
+  }
+  .batik .batik-image-container {
+    flex-wrap: wrap;
+    flex: 60%;
+  }
+  .batik .batik-image-container .image {
+    margin: 0 20px 20px 0;
+    flex: calc( 50% - 40px);
+  }
+  .batik .text {
+    flex: 55%;
+    padding: 40px 0 0 62px;
+  }
+  .batik .text h3 {
+    color: #000;;
+  }
+  .batik .text .fa-asterisk {
+    color: #9a9998;
+  }
+  /*End batik*/
+  
+  /*Start fixed-image*/
+  .fixed-image {
+    position: relative;
+    height: 350px;
+    background: url("https://wallpapercave.com/wp/wp1862844.jpg") fixed center;
+    background-size: cover;
+    display: flex;
+    align-items: baseline;
+  }
+  /*End fixed-image*/
+  .fixed-image form {
+    position: relative;
+    width: 500px;
+    height: 200px;
+    border: 4px dashed #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.5);
+  }
+  .fixed-image form p {
+    color: #ffffff;
+    font-family: Arial;
+    text-align: center;
+  }
+  
+  .fixed-image form input {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    cursor: pointer;
+  }
+  
+  .fixed-image form button {
+    color: #fff;
+    background: #16a085;
+    width: 100%;
+    height: 60px;
+    border-radius: 4px;
+    border-bottom: 4px solid #117A60;
+    transition: all .2s ease;
+    cursor: pointer;
+  }
+  
+  .fixed-image form button:hover {
+    background: #149174;
+    color: #0C5645;
+  }
+  
+  .fixed-image form button:active {
+    border: 0;
+  }
+  
+  /*Start Footer*/
+  footer {
+    background-color: #121212;
+    padding: 60px 20px;
+  }
+  footer .text {
+    max-width: 500px;
+    margin: auto;
+  }
+  footer .text h2 {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 19px;
+    letter-spacing: 1.9px;
+    margin-bottom: 25px;
+  }
+  footer .text .fa-asterisk {
+    font-size: 12px;
+  }
+  footer .text p {
+    line-height: 27px;
+  }
+  footer .contact-container {
+    padding: 40px 0;
+    max-width: 1000px;
+    margin: auto;
+  }
+  footer .contact-container > div {
+    flex: 1;
+  }
+  footer .contact-container h3 {
+    font-size: 19px;
+    letter-spacing: 1.9px;
+  }
+  footer .social-media .links a {
+    margin: 0 10px;
+    font-size: 25px;
+  }
+  footer .newsletter input {
+    padding: 10px;
+    width: 270px;
+    background-color: #eee;
+    border: none;
+    margin-left: -15px;
+  }
+  footer .newsletter i {
+    margin-left: -40px;
+    vertical-align: middle;
+    font-size: 21px;
+  }
+  
+  /*End Footer*/
+  
+  
+  /*Start Home Page Responsive*/
+  
+  @media (max-width: 1200px) {
+    .batik, .about-us, .reservation {
+        padding: 60px 40px;
+    }
+    .about-us .text, .reservation .text {
+        padding: 0 32px 0 0;
+    }
+    .about-us .image-container, .reservation .image-container {
+        align-items: center;
+    }
+    .batik .text {
+        padding: 0 0 0 32px;
+    }
+  }
+  
+  @media (max-width: 992px) {
+    body {
+        padding: 0;
+    }
+    .dots {
+        display: none;
+    }
+    header {
+        height: calc(100vh - 10px);
+    }
+    header nav .logo {
+        padding-left: 0;
+    }
+    .about-us {
+        display: block;
+        padding-top: 50px;
+    }
+    .about-us .text , .reservation .text {
+        padding: 0 0 40px;
+    }
+    .about-us .image-container .image1, .reservation .image-container .image1 {
+        margin-left: 0;
+    }
+    .batik {
+        display: block;
+        padding: 60px 20px 60px 40px;
+    }
+    .batik .text {
+        padding: 20px 20px 0 0;
+    }
+    .reservation {
+        display: block;
+        padding: 30px 20px 60px;
+    }
+    .contact {
+        display: block;
+        padding: 78px 20px;
+    }
+    .contact .form {
+        margin-left: 0;
+        margin-top: 40px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    header nav {
+        display: block;
+        text-align: center;
+        left: 0;
+        top: 0;
+        width: 100%;
+        padding-top: 25px;
+    }
+    header nav .toggle {
+        display: block;
+    }
+    header .navigation-bar {
+        position: fixed;
+        top: 0;
+        left: -174px;
+        height: 100%;
+        background-color: #262526;
+        overflow: hidden;
+        z-index: 20;
+        padding: 40px;
+    }
+    header .navigation-bar ul {
+        display: block;
+        padding-top: 40px;
+    }
+    header .navigation-bar ul li {
+        text-align: left;
+        padding: 14px 0;
+    }
+    footer .contact-container {
+        display: block;
+    }
+    footer .social-media {
+        margin-bottom: 40px;
+    }
+  
+  
+  }
+  
+  @media (max-width: 576px) {
+    h3, h1 {
+        font-size: 40px;
+    }
+    h2 {
+        font-size:90px
+    }
+    header {
+        padding: 0;
+    }
+    header nav .logo {
+        padding-left: 0;
+    }
+    header nav .toggle.active {
+        left: 36%;
+    }
+    header .navigation-bar.show {
+        padding: 20px;
+        width: 48%;
+    }
+    .about-us, .reservation {
+        padding: 60px 20px;
+    }
+    .batik {
+        padding: 60px 0 60px 20px;
+    }
+  }
+  /*End Home Page Responsive*/
